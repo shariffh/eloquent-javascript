@@ -45,4 +45,6 @@ the second argument, and false otherwise
 function startsWith(string, pattern) {
 return string.slice(0, pattern.length) == pattern;
 }
-show(startsWith("rotation", "rot"));
+console.log(startsWith("rotation", "rot"));
+console.log("Pip".charAt(250));
+console.log("Nop".slice(1, 10));
