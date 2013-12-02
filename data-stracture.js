@@ -184,3 +184,11 @@ else
 return oldest.name;
 }
 print(oldestCat(catData));
+
+/*
+a function that count number of arguments passed
+ */
+function argumentCounter() {
+console.log("You gave me ", arguments.length, " arguments.");
+}
+argumentCounter("Death", "Famine", "Pestilence");
