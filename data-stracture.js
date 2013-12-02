@@ -48,3 +48,9 @@ return string.slice(0, pattern.length) == pattern;
 console.log(startsWith("rotation", "rot"));
 console.log("Pip".charAt(250));
 console.log("Nop".slice(1, 10));
+
+function catNames(paragraph) {
+var colon = paragraph.indexOf(":");
+return paragraph.slice(colon + 2).split(", ");
+}
+console.log(catNames("born 20/09/2004 (mother Yellow Bess): " + "Doctor Hobbles the 2nd, Noog"));
