@@ -111,3 +111,40 @@ var end = paragraph.indexOf(")");
 return paragraph.slice(start, end);
 }
 console.log(extractMother("born 15/11/2003 (mother Spot): White Fang"));
+
+
+function findCats() {
+var mailArchive = retrieveMails();
+var cats = {"Spot": catRecord("Spot", new Date(1997, 2, 5),
+"unknown")};
+function handleParagraph(paragraph) {
+if (startsWith(paragraph, "born"))
+addCats(cats, catNames(paragraph), extractDate(paragraph),
+extractMother(paragraph));
+else if (startsWith(paragraph, "died"))
+deadCats(cats, catNames(paragraph), extractDate(paragraph));
+}
+for (var mail = 0; mail < mailArchive.length; mail++) {
+var paragraphs = mailArchive[mail].split("\n");
+for (var i = 0; i < paragraphs.length; i++)
+handleParagraph(paragraphs[i]);
+}
+return cats;
+}
+var catData = findCats();
+
+function formatDate(date) {
+return date.getDate() + "/" + (date.getMonth() + 1) +
+"/" + date.getFullYear();
+}
+function catInfo(data, name) {
+if (!(name in data))
+return "No cat by the name of " + name + " is known.";
+var cat = data[name];
+var message = name + ", born " + formatDate(cat.birth) +
+" from mother " + cat.mother;
+if ("death" in cat)
+message += ", died " + formatDate(cat.death);
+return message + ".";
+}
+console.log(catInfo(catData, "Fat Igor"));
