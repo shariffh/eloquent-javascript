@@ -23,3 +23,8 @@ console.log(object1 == object3);
 object1.value = 15;
 console.log(object2.value);
 console.log(object3.value);
+
+/*codes to uppercase text*/
+var doh = "Doh";
+print(typeof doh.toUpperCase);
+print(doh.toUpperCase());
