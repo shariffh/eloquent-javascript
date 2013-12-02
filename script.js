@@ -33,3 +33,25 @@ for (var counter = 0; counter < 10; counter = counter + 1) {
 line = line + "#";
 console.log(line);
 }
+
+/*show all numbers below 20 which are divisible both by 3 and by 4*/
+for (var counter = 0; counter < 20; counter++) {
+if (counter % 3 == 0 && counter % 4 == 0)
+console.log(counter);
+}
+/*print all numbers below 20, but put parentheses 
+around the ones that are not divisible by 4*/
+for (var counter = 0; counter < 20; counter++) {
+if (counter % 4 == 0)
+console.log(counter);
+if (counter % 4 != 0)
+console.log("(" + counter + ")");
+}
+
+var answer = prompt("You! What is the value of 2 + 2?", "");
+if (answer == "4")
+alert("You must be a genius or something.");
+else if (answer == "3" || answer == "5")
+alert("Almost!");
+else
+alert("You're an embarrassment.");
