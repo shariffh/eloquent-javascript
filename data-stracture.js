@@ -165,3 +165,22 @@ return pad(date.getDate()) + "/" + pad(date.getMonth() + 1) +
 "/" + date.getFullYear();
 }
 console.log(formatDate(new Date(2000, 0, 1)));
+
+/*
+Write a function oldestCat which, given an object containing cats as its argument, 
+returns the name of the oldest living cat.
+*/
+function oldestCat(data) {
+var oldest = null;
+for (var name in data) {
+var cat = data[name];
+if (!("death" in cat) &&
+(oldest == null || oldest.birth > cat.birth))
+oldest = cat;
+}
+if (oldest == null)
+return null;
+else
+return oldest.name;
+}
+print(oldestCat(catData));
