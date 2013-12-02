@@ -49,8 +49,46 @@ console.log(startsWith("rotation", "rot"));
 console.log("Pip".charAt(250));
 console.log("Nop".slice(1, 10));
 
+
+
 function catNames(paragraph) {
 var colon = paragraph.indexOf(":");
 return paragraph.slice(colon + 2).split(", ");
 }
 console.log(catNames("born 20/09/2004 (mother Yellow Bess): " + "Doctor Hobbles the 2nd, Noog"));
+
+
+
+function addToSet(set, values) {
+for (var i = 0; i < values.length; i++)
+set[values[i]] = true;
+}
+function removeFromSet(set, values) {
+for (var i = 0; i < values.length; i++)
+delete set[values[i]];
+}
+var livingCats = {Spot: true};
+for (var mail = 0; mail < mailArchive.length; mail++) {
+var paragraphs = mailArchive[mail].split("\n");
+for (var paragraph = 0;
+paragraph < paragraphs.length;
+paragraph++) {
+if (startsWith(paragraphs[paragraph], "born"))
+addToSet(livingCats, catNames(paragraphs[paragraph]));
+
+
+
+var when = new Date(2013, 11, 2);
+console.log(when);
+
+/*Date object*/
+var today = new Date();
+console.log("Year: ", today.getFullYear(), ", month: ",
+today.getMonth(), ", day: ", today.getDate());
+console.log("Hour: ", today.getHours(), ", minutes: ",
+today.getMinutes(), ", seconds: ", today.getSeconds());
+console.log("Day of week: ", today.getDay());
+else if (startsWith(paragraphs[paragraph], "died"))
+removeFromSet(livingCats, catNames(paragraphs[paragraph]));
+}
+}
