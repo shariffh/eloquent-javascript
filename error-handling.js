@@ -21,6 +21,10 @@ throw "Oh no! We are already processing a thing!";
 currentThing = thing;
 try {
 /* do complicated processing... */
+print(Sasquatch);
+}
+catch (error) {
+print("Caught: " + error.message);
 }
 finally {
 currentThing = null;
