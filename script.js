@@ -48,10 +48,28 @@ if (counter % 4 != 0)
 console.log("(" + counter + ")");
 }
 
+/*A program that ask using prompt, what the value of 2 + 2 is.
+ If the answer is "4", use alert to say something praising. If it is "3" 
+ or "5", say "Almost!". In other cases, say something mean.*/
 var answer = prompt("You! What is the value of 2 + 2?", "");
 if (answer == "4")
-alert("You must be a genius or something.");
+alert("It is OK.");
 else if (answer == "3" || answer == "5")
-alert("Almost!");
+alert("It is near!");
 else
+alert("Wrong.");
+
+var answer;
+while (true) {
+answer = prompt("You! What is the value of 2 + 2?", "");
+if (answer == "4") {
+alert("You must be a genius or something.");
+break;
+}
+else if (answer == "3" || answer == "5") {
+alert("Almost!");
+}
+else {
 alert("You're an embarrassment.");
+}
+}
