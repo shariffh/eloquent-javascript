@@ -148,3 +148,19 @@ message += ", died " + formatDate(cat.death);
 return message + ".";
 }
 console.log(catInfo(catData, "Fat Igor"));
+
+/*
+The formatDate function used by catInfo does not add a zero before the month 
+and the day part when these are only one digit long. Write a new version that does this.
+*/
+function formatDate(date) {
+function pad(number) {
+if (number < 10)
+return "0" + number;
+else
+return number;
+}
+return pad(date.getDate()) + "/" + pad(date.getMonth() + 1) +
+"/" + date.getFullYear();
+}
+console.log(formatDate(new Date(2000, 0, 1)));
