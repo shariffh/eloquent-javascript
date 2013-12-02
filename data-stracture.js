@@ -24,7 +24,25 @@ object1.value = 15;
 console.log(object2.value);
 console.log(object3.value);
 
-/*codes to uppercase text*/
-var doh = "Doh";
+/*codes toUpperCase text*/
+var doh = "shariff";
 print(typeof doh.toUpperCase);
 print(doh.toUpperCase());
+
+var mack = [];
+mack.push("Mack");
+mack.push("the");
+mack.push("Knife");
+console.log(mack.join(" "));
+console.log(mack.pop());
+console.log(mack);
+
+/*
+A function that takes two arguments, both strings. 
+It returns true when the first argument starts with the characters in 
+the second argument, and false otherwise
+*/
+function startsWith(string, pattern) {
+return string.slice(0, pattern.length) == pattern;
+}
+show(startsWith("rotation", "rot"));
