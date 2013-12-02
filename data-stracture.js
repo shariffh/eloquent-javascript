@@ -153,6 +153,7 @@ console.log(catInfo(catData, "Fat Igor"));
 The formatDate function used by catInfo does not add a zero before the month 
 and the day part when these are only one digit long. Write a new version that does this.
 */
+
 function formatDate(date) {
 function pad(number) {
 if (number < 10)
