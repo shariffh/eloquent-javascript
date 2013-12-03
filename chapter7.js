@@ -63,4 +63,14 @@ from = randomDirection(from);
 }
 return path;
 }
-show(gamblerPath("Hanaiapa", "Mt Feani"));
+console.log(gamblerPath("Hanaiapa", "Mt Feani"));
+
+function member(array, value) {
+var found = false;
+forEach(array, function(element) {
+if (element === value)
+found = true;
+});
+return found;
+}
+console.log(member([6, 7, "Bordeaux"], 7));
