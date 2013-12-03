@@ -21,5 +21,17 @@ console.log("The ", this.adjective, " rabbit says '", line, "'");
 }
 var killerRabbit = new Rabbit("killer");
 killerRabbit.speak("GRAAAAAAAAAH!");
+function makeRabbit(adjective) {
+return {
+adjective: adjective,
+speak: function(line) {/*etc*/}
+};
+}
+var blackRabbit = makeRabbit("black");
+var simpleObject = {};
+console.log(simpleObject.constructor);
+console.log(simpleObject.toString);
+console.log(Rabbit.prototype);
+console.log(Rabbit.prototype.constructor);
 console.log(killerRabbit.constructor);
 console.log(blackRabbit.constructor);
