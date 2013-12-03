@@ -21,3 +21,5 @@ console.log("The ", this.adjective, " rabbit says '", line, "'");
 }
 var killerRabbit = new Rabbit("killer");
 killerRabbit.speak("GRAAAAAAAAAH!");
+console.log(killerRabbit.constructor);
+console.log(blackRabbit.constructor);
