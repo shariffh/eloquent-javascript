@@ -188,3 +188,22 @@ function samePoint(a, b) {
 return a.x == b.x && a.y == b.y;
 }
 console.log(samePoint(addPoints(point(10, 10), point(4, -2)), point(14, 8)));
+
+/*
+Write a function possibleDirections, which takes a point object as argument and 
+returns an array of nearby points. We can only move to adjacent points, both straight 
+and diagonally, so squares have a maximum of eight neighbours.
+*/
+function possibleDirections(from) {
+var mapSize = 20;
+function insideMap(point) {
+return point.x >= 0 && point.x < mapSize &&
+point.y >= 0 && point.y < mapSize;
+}
+var directions = [point(-1, 0), point(1, 0), point(0, -1),
+point(0, 1), point(-1, -1), point(-1, 1),
+point(1, 1), point(1, -1)];
+return filter(insideMap, map(partial(addPoints, from),
+directions));
+}
+console.log(possibleDirections(point(0, 0)));
