@@ -45,3 +45,12 @@ Rabbit.prototype.dance = function() {
 console.log("The ", this.adjective, " rabbit dances a jig.");
 };
 killerRabbit.dance();
+
+function Rabbit(adjective) {
+this.adjective = adjective;
+}
+Rabbit.prototype.speak = function(line) {
+console.log("The ", this.adjective, " rabbit says '", line, "'");
+};
+var hazelRabbit = new Rabbit("hazel");
+hazelRabbit.speak("Good Frith!");
