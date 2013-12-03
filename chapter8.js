@@ -41,3 +41,7 @@ console.log(killerRabbit.teeth);
 console.log(Rabbit.prototype.teeth);
 console.log(killerRabbit.constructor);
 console.log(blackRabbit.constructor);
+Rabbit.prototype.dance = function() {
+console.log("The ", this.adjective, " rabbit dances a jig.");
+};
+killerRabbit.dance();
