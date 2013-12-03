@@ -117,3 +117,13 @@ forEach(array, function (element){result.push(element);});
 });
 return result;
 }
+
+function filter(test, array) {
+var result = [];
+forEach(array, function (element) {
+if (test(element))
+result.push(element);
+});
+return result;
+}
+show(filter(partial(op[">"], 5), [0, 4, 8, 12]));
