@@ -38,3 +38,8 @@ window.getMonthNumber = getMonthNumber;
 }
 buildMonthNameModule();
 show(getMonthName(11));
+function provide(values) {
+forEachIn(values, function(name, value) {
+window[name] = value;
+});
+}
