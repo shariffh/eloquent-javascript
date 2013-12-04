@@ -234,3 +234,10 @@ return characters.join("");
 };
 var terrarium = new Terrarium(thePlan);
 console.log(terrarium.toString());
+/*ex 8.4*/
+function method(object, name) {
+return function() {
+return object[name].apply(object, arguments);
+};
+}
+var pushTest = method(testArray, "push");
