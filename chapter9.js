@@ -18,3 +18,23 @@ if (!loadedFiles[file]) {
 }
 require("TestModule.js");
 test();
+show(window);
+show(window.print == print);
+show(window.window.window.window.window);
+
+function buildMonthNameModule() {
+var names = ["January", "February", "March", "April","May", "June", "July", "August", "September", "October", "November", "December"];
+     function getMonthName(number) {
+           return names[number];
+               }
+function getMonthNumber(name) {
+     for (var number = 0; number < names.length; number++) {
+        if (names[number] == name)
+          return number;
+            }
+             }
+window.getMonthName = getMonthName;
+window.getMonthNumber = getMonthNumber;
+}
+buildMonthNameModule();
+show(getMonthName(11));
