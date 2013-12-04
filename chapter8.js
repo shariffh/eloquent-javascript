@@ -276,3 +276,11 @@ else {
 throw new Error("Unsupported action: " + action.type);
 }
 };
+Terrarium.prototype.step = function() {
+forEach(this.listActingCreatures(),
+bind(this.processCreature, this));
+};
+var terrarium = new Terrarium(thePlan);
+console.log(terrarium);
+terrarium.step();
+console.log(terrarium);
