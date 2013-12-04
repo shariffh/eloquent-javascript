@@ -159,4 +159,19 @@ point.x < this.width && point.y < this.height;
 Grid.prototype.moveValue = function(from, to) {
 this.setValueAt(to, this.valueAt(from));
 this.setValueAt(from, undefined);
+Grid.prototype.each = function(action) {
+for (var y = 0; y < this.height; y++) {
+for (var x = 0; x < this.width; x++) {
+var point = new Point(x, y);
+action(point, this.valueAt(point));
+}
+}
+}
+
+var testGrid = new Grid(3, 2);
+testGrid.setValueAt(new Point(1, 0), "#");
+testGrid.setValueAt(new Point(1, 1), "o");
+testGrid.each(function(point, value) {
+console.log(point.x, ",", point.y, ": ", value);
+});
 };
