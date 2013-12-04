@@ -365,4 +365,17 @@ return array[Math.floor(Math.random() * array.length)];
 }
 console.log(randomElement(["heads", "tails"]));
 
+function DrunkBug() {};
+DrunkBug.prototype.act = function(surroundings) {
+return {type: "move",
+direction: randomElement(directions.names())};
+};
+DrunkBug.prototype.character = "~";
+creatureTypes.register(DrunkBug);
+
+function clone(object) {
+function OneShotConstructor(){}
+OneShotConstructor.prototype = object;
+return new OneShotConstructor();
+}
 
