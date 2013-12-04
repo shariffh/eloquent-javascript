@@ -43,3 +43,48 @@ forEachIn(values, function(name, value) {
 window[name] = value;
 });
 }
+
+var HTML = {
+tag: function(name, content, properties) {
+return {name: name, properties: properties, content: content};
+},
+link: function(target, text) {
+return HTML.tag("a", [text], {href: target});
+}
+/* ... many more HTML-producing functions ... */
+};
+
+
+provide(HTML);
+show(link("http://download.oracle.com/docs/cd/E19957-01/816-6408-10/object.htm",
+"This is how objects work."));
+
+function range(start, end, stepSize, length) {
+if (stepSize == undefined)
+stepSize = 1;
+if (end == undefined)
+end = start + stepSize * (length - 1);
+var result = [];
+for (; start <= end; start += stepSize)
+result.push(start);
+return result;
+}
+show(range(0, undefined, 4, 5));
+
+
+function defaultTo(object, values) {
+     forEachIn(values, function(name, value) {
+       if (!object.hasOwnProperty(name))
+          object[name] = value;
+           });
+             }
+function range(args) {
+          defaultTo(args, {start: 0, stepSize: 1});
+             if (args.end == undefined)
+args.end = args.start + args.stepSize * (args.length - 1);
+var result = [];
+for (; args.start <= args.end; args.start += args.stepSize)
+result.push(args.start);
+return result;
+}
+show(range({stepSize: 4, length: 5}));
