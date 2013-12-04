@@ -134,3 +134,6 @@ Point.prototype.isEqualTo = function(other) {
 return this.x == other.x && this.y == other.y;
 };
 console.log((new Point(3, 1)).add(new Point(2, 4)));
+var grid = [["0,0", "1,0", "2,0"],
+["0,1", "1,1", "2,1"]];
+console.log(grid[1][2]);
