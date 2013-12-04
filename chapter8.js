@@ -232,3 +232,5 @@ characters.push("\n");
 });
 return characters.join("");
 };
+var terrarium = new Terrarium(thePlan);
+console.log(terrarium.toString());
