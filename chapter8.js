@@ -301,3 +301,7 @@ clearInterval(this.running);
 this.running = null;
 }
 };
+
+var printHere = inPlacePrinter();
+printHere("Now you see it.");
+setTimeout(partial(printHere, "Now you don't."), 1000);
