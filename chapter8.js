@@ -351,3 +351,18 @@ return {type: "move", direction: this.direction};
 };
 BouncingBug.prototype.character = "%";
 creatureTypes.register(BouncingBug);
+
+Dictionary.prototype.names = function() {
+var names = [];
+this.each(function(name, value) {names.push(name);});
+return names;
+};
+
+function randomElement(array) {
+if (array.length == 0)
+throw new Error("The array is empty.");
+return array[Math.floor(Math.random() * array.length)];
+}
+console.log(randomElement(["heads", "tails"]));
+
+
