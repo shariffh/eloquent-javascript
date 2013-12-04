@@ -16,3 +16,5 @@ if (!loadedFiles[file]) {
      load(file);
 }
 }
+require("TestModule.js");
+test();
