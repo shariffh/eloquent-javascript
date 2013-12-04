@@ -566,3 +566,20 @@ result[name] = value;
 return result;
 };
 
+var Item = {
+construct: function(name) {
+this.name = name;
+},
+inspect: function() {
+print("it is ", this.name, ".");
+},
+kick: function() {
+print("klunk!");
+},
+take: function() {
+console.log("you can not lift ", this.name, ".");
+}
+};
+var lantern = Item.create("the brass lantern");
+lantern.kick();
+
