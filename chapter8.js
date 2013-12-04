@@ -211,3 +211,24 @@ return wall;
 else if (character == "o")
 return new StupidBug();
 }
+
+wall.character = "#";
+StupidBug.prototype.character = "o";
+function characterFromElement(element) {
+if (element == undefined)
+return " ";
+else
+return element.character;
+}
+console.log(characterFromElement(wall));
+
+Terrarium.prototype.toString = function() {
+var characters = [];
+var endOfLine = this.grid.width - 1;
+this.grid.each(function(point, value) {
+characters.push(characterFromElement(value));
+if (point.x == endOfLine)
+characters.push("\n");
+});
+return characters.join("");
+};
