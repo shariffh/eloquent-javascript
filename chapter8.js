@@ -316,3 +316,13 @@ this.onStep();
 var terrarium = new Terrarium(thePlan);
 terrarium.onStep = partial(inPlacePrinter(), terrarium);
 terrarium.start();
+terrarium.stop();
+
+function elementFromCharacter(character) {
+if (character == " ")
+return undefined;
+else if (character == "#")
+return wall;
+else if (character == "o")
+return new StupidBug();
+}
