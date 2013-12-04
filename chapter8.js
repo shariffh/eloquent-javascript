@@ -378,4 +378,9 @@ function OneShotConstructor(){}
 OneShotConstructor.prototype = object;
 return new OneShotConstructor();
 }
+function LifeLikeTerrarium(plan) {
+Terrarium.call(this, plan);
+}
+LifeLikeTerrarium.prototype = clone(Terrarium.prototype);
+LifeLikeTerrarium.prototype.constructor = LifeLikeTerrarium;
 
