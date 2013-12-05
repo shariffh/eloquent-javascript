@@ -157,3 +157,11 @@ $("picture").style.top = (100 + 100 * Math.sin(angle)) + "px";
 }, 100);
 
 clearInterval(spin);
+
+$("picture").style.width = "400px";
+$("picture").style.height = "200px";
+
+console.log("Outer size: ", $("picture").offsetWidth,
+" by ", $("picture").offsetHeight, " pixels.");
+console.log("Inner size: ", $("picture").clientWidth,
+" by ", $("picture").clientHeight, " pixels.");
