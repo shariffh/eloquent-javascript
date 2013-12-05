@@ -56,4 +56,6 @@ console.log($("picture"));
 console.log(document.body.getElementsByTagName("BLINK")[0]);
 
 var secondHeader = document.createElement("H1");
+secondHeader.appendChild(secondTitle);
+document.body.appendChild(secondHeader);
 var secondTitle = document.createTextNode("Chapter 2: Deep magic");
