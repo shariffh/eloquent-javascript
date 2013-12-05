@@ -1,4 +1,4 @@
-attach(window.open("example_alchemy.html"));
+
 
 console.log(document.body);
 console.log(document.body.parentNode);
@@ -24,7 +24,7 @@ return !isTextNode(node) && node.nodeName == "IMG";
 }
 console.log(isImage(document.body.lastChild));
 
-/*
+/*Ex. 12.1
 Write a function asHTML which, when given a DOM node, produces a string 
 representing the HTML text for that node and its children. You may ignore 
 attributes, just console.log nodes as <nodename>. The escapeHTML function from 
@@ -47,3 +47,13 @@ else
   var picture = document.getElementById("picture");
       console.log(picture.src);
        picture.src = "img/ostrich.png";
+
+       function $(id) {
+return document.getElementById(id);
+}
+console.log($("picture"));
+
+console.log(document.body.getElementsByTagName("BLINK")[0]);
+
+var secondHeader = document.createElement("H1");
+var secondTitle = document.createTextNode("Chapter 2: Deep magic");
