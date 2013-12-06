@@ -91,7 +91,8 @@ var blockQ = addHandler($("textfield"), "keypress", function(event) {
 if (event.character.toLowerCase() == "q")
 event.stop();
 });
-}
+
+
 if (event.srcElement && !event.target)
 event.target = event.srcElement;
 if ((event.toElement || event.fromElement) && !event.relatedTarget)
@@ -108,3 +109,44 @@ event.character = String.fromCharCode(event.charCode);
 }
 return event;
 }
+
+console.log(sokobanLevels.length);
+console.log(sokobanLevels[1].boulders);
+forEach(sokobanLevels[1].field, print);
+}
+
+var Square = {
+construct: function(character, tableCell) {
+this.background = "empty";
+if (character == "#")
+this.background = "wall";
+else if (character == "*")
+this.background = "exit";
+this.tableCell = tableCell;
+this.tableCell.className = this.background;
+this.content = null;
+if (character == "0")
+this.content = "boulder";
+else if (character == "@")
+this.content = "player";
+if (this.content != null) {
+var image = dom("IMG", {src: "img/sokoban/" +
+this.content + ".gif"});
+this.tableCell.appendChild(image);
+}
+},
+hasPlayer: function() {
+return this.content == "player";
+},
+hasBoulder: function() {
+return this.content == "boulder";
+},
+isEmpty: function() {
+return this.content == null && this.background == "empty";
+},
+isExit: function() {
+return this.background == "exit";
+}
+};
+var testSquare = Square.create("@", dom("TD"));
+console.log(testSquare.hasPlayer());
