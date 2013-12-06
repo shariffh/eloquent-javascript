@@ -18,3 +18,10 @@ else
 var registerEventHandler = function(node, event, handler) {
 node.attachEvent("on" + event, handler);
 };
+
+function unregisterEventHandler(node, event, handler) {
+if (typeof node.removeEventListener == "function")
+node.removeEventListener(event, handler, false);
+else
+node.detachEvent("on" + event, handler);
+}
