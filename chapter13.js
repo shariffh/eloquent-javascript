@@ -232,3 +232,37 @@ playerSquare.moveContent(targetSquare);
 this.playerPos = targetPos;
 }
 };
+
+testField.move(new Point(-1, 0));
+testField.move(new Point(-1, 0));
+
+
+var SokobanGame = {
+construct: function(place) {
+this.level = null;
+this.field = null;
+var newGame = dom("BUTTON", null, "New game");
+addHandler(newGame, "click", method(this, "newGame"));
+var reset = dom("BUTTON", null, "Reset level");
+addHandler(reset, "click", method(this, "reset"));
+this.container = dom("DIV", null,
+dom("H1", null, "Sokoban"),
+dom("DIV", null, newGame, " ", reset));
+place.appendChild(this.container);
+addHandler(document, "keydown", method(this, "keyDown"));
+this.newGame();
+},
+newGame: function() {
+this.level = 0;
+this.reset();
+},
+reset: function() {
+if (this.field)
+this.field.remove();
+this.field = SokobanField.create(sokobanLevels[this.level]);
+this.field.place(this.container);
+},
+keyDown: function(event) {
+// To be filled in
+}
+};
