@@ -25,3 +25,8 @@ node.removeEventListener(event, handler, false);
 else
 node.detachEvent("on" + event, handler);
 }
+
+function showEvent(event) {
+show(event || window.event);
+}
+registerEventHandler($("textfield"), "keypress", showEvent);
