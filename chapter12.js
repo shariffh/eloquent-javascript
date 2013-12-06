@@ -142,7 +142,7 @@ setNodeAttribute($("picture"), "style",
 	                            border-style: solid;");
 
 $("picture").style.borderColor = "green";
-show($("picture").style.borderColor);
+console.log($("picture").style.borderColor);
 
 $("picture").style.display = "none";
 
