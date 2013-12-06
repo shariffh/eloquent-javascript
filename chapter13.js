@@ -309,3 +309,24 @@ removeElement(image);
 }
 }, 70);
 };
+
+addHandler($("textfield"), "focus", function(event) {
+event.target.style.backgroundColor = "yellow";
+});
+addHandler($("textfield"), "blur", function(event) {
+event.target.style.backgroundColor = "";
+});
+
+addHandler($("textfield"), "change", function(event) {
+print("Content of text field changed to '",
+event.target.value, "'.");
+});
+
+var jsObject = {link: document.body};
+document.body.linkBack = jsObject;
+
+function addAlerter(element) {
+addHandler(element, "click", function() {
+alert("Alert! ALERT!");
+});
+}
