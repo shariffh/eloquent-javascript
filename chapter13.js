@@ -329,4 +329,5 @@ function addAlerter(element) {
 addHandler(element, "click", function() {
 alert("Alert! ALERT!");
 });
+element = null;
 }
