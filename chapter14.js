@@ -84,3 +84,19 @@ else
 return String(value);
 }
 console.log(serializeJSON(fruit));
+
+
+function simpleHttpRequest(url, success, failure) {
+var request = makeHttpObject();
+request.open("GET", url, true);
+request.send(null);
+request.onreadystatechange = function() {
+if (request.readyState == 4) {
+if (request.status == 200)
+success(request.responseText);
+else if (failure)
+failure(request.status, request.statusText);
+}
+};
+}
+simpleHttpRequest("files/fruit.txt", print);
