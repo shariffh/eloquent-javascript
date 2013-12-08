@@ -31,5 +31,8 @@ request.open("GET", "files/fruit.xml", true);
 request.send(null);
 request.onreadystatechange = function() {
 if (request.readyState == 4)
-show(request.responseText.length);
+console.log(request.responseText.length);
 };
+
+var catalog = request.responseXML.documentElement;
+console.log(catalog.childNodes.length);
