@@ -43,3 +43,9 @@ request.onreadystatechange = function() {
 if (request.readyState == 4)
 console.log(request.responseText);
 };
+
+function evalJSON(json) {
+return eval("(" + json + ")");
+}
+var fruit = evalJSON(request.responseText);
+console.log(fruit);
